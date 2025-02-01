@@ -1,19 +1,19 @@
 package com.eshopping.decemberprojectmodulev2.models.User;
 
 import com.eshopping.decemberprojectmodulev2.models.BaseModel;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
-
-@Entity
-public class Geolocation extends BaseModel {
+@Embeddable
+public class Geolocation {
     private String lat;
-    private String longitude;
+    private String lon;
 
     public Geolocation() {
     }
 
-    public Geolocation(String lat, String longitude) {
+    public Geolocation(String lat, String lon) {
         this.lat = lat;
-        this.longitude = longitude;
+        this.lon = lon;
     }
 
     public String getLat() {
@@ -24,11 +24,11 @@ public class Geolocation extends BaseModel {
         this.lat = lat;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public String getLon() {
+        return lon;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setLon(String lon) {
+        this.lon = lon;
     }
 }

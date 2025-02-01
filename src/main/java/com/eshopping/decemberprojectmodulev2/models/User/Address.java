@@ -1,24 +1,27 @@
 package com.eshopping.decemberprojectmodulev2.models.User;
 
 import com.eshopping.decemberprojectmodulev2.models.BaseModel;
-import jakarta.persistence.Entity;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
 
-@Entity
-public class Address extends BaseModel {
+@Embeddable
+public class Address {
     private String city;
     private String street;
     private Integer number;
     private String zipcode;
+    @Embedded
+    private Geolocation geolocation;
 
     public Address() {
     }
 
-    public Address(String city, String street, Integer number, String zipcode) {
+    public Address(String city, String street, Integer number, String zipcode, Geolocation geolocation) {
         this.city = city;
         this.street = street;
         this.number = number;
         this.zipcode = zipcode;
-
+        this.geolocation = geolocation;
     }
 
     public String getCity() {
@@ -51,5 +54,13 @@ public class Address extends BaseModel {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    public Geolocation getGeolocation() {
+        return geolocation;
+    }
+
+    public void setGeolocation(Geolocation geolocation) {
+        this.geolocation = geolocation;
     }
 }

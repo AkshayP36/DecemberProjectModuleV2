@@ -1,5 +1,7 @@
 package com.eshopping.decemberprojectmodulev2.services.Users;
 
+import com.eshopping.decemberprojectmodulev2.models.User.Address;
+import com.eshopping.decemberprojectmodulev2.models.User.Name;
 import com.eshopping.decemberprojectmodulev2.models.User.User;
 import com.eshopping.decemberprojectmodulev2.repository.Users.UserRepository;
 import org.springframework.stereotype.Service;
@@ -29,13 +31,14 @@ public class SelfUserService implements UserService{
         }
         return response;
     }
-    public User createAUser(String email, String username, String phone){
+    public User createAUser(String email, String username, Name name, Address address, String phone){
         User user = new User();
         user.setEmail(email);
         user.setUsername(username);
         user.setPhone(phone);
         user.setCreatedAt(new Date());
         user.setUpdatedAt(new Date());
+        user.setName(name);
         user.setDeleted(false);
         return userRepository.save(user);
     }

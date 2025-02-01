@@ -1,10 +1,11 @@
 package com.eshopping.decemberprojectmodulev2.models.User;
 
 import com.eshopping.decemberprojectmodulev2.models.BaseModel;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 
-@Entity
-public class Name extends BaseModel {
+@Embeddable
+public class Name {
     private String firstname;
     private String lastname;
 
