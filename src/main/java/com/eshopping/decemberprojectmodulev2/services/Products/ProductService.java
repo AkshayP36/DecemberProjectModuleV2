@@ -1,13 +1,14 @@
 package com.eshopping.decemberprojectmodulev2.services.Products;
 
-import com.eshopping.decemberprojectmodulev2.models.Products.Products;
+import com.eshopping.decemberprojectmodulev2.exceptions.Products.ProductNotFoundException;
+import com.eshopping.decemberprojectmodulev2.models.Products.Product;
 
 public interface ProductService {
-    Products getSingleProduct(Long id);
-    Products[] getAllProducts();
-    Products createProduct(Long id, String title, String description, Double price, String imageUrl, String category);
+    Product getSingleProduct(Long id) throws ProductNotFoundException;
+    Product[] getAllProducts();
+    Product createProduct(Long id, String title, String description, Double price, String imageUrl, String category);
 
-    Products updateAProduct(Long id, String title, String description, Double price, String imageUrl, String category);
+    Product updateAProduct(Long id, String title, String description, Double price, String imageUrl, String category);
 
-    Products deleteAProduct(Long id);
+    Product deleteAProduct(Long id);
 }
