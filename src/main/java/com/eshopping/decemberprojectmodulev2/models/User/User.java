@@ -1,6 +1,7 @@
 package com.eshopping.decemberprojectmodulev2.models.User;
 
 import com.eshopping.decemberprojectmodulev2.models.BaseModel;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 
 @Entity
@@ -10,14 +11,20 @@ public class User extends BaseModel {
     private String username;
     private String password;
     private String phone;
+    @Embedded
+    private Name name;
+    @Embedded
+    private Address address;
 
     public User() {
     }
 
-    public User(String email, String username, String phone) {
+    public User(String email, String username, String phone, Name name, Address address) {
         this.email = email;
         this.username = username;
         this.phone = phone;
+        this.name = name;
+        this.address = address;
     }
 
     public String getEmail() {
@@ -42,5 +49,21 @@ public class User extends BaseModel {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
