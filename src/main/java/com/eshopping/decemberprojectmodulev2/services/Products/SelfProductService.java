@@ -3,8 +3,8 @@ package com.eshopping.decemberprojectmodulev2.services.Products;
 import com.eshopping.decemberprojectmodulev2.exceptions.Products.ProductNotFoundException;
 import com.eshopping.decemberprojectmodulev2.models.Products.Category;
 import com.eshopping.decemberprojectmodulev2.models.Products.Product;
-import com.eshopping.decemberprojectmodulev2.repository.CategoryRepository;
-import com.eshopping.decemberprojectmodulev2.repository.ProductRepository;
+import com.eshopping.decemberprojectmodulev2.repository.Products.CategoryRepository;
+import com.eshopping.decemberprojectmodulev2.repository.Products.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

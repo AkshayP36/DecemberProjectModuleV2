@@ -1,4 +1,4 @@
-package com.eshopping.decemberprojectmodulev2.repository;
+package com.eshopping.decemberprojectmodulev2.repository.Products;
 
 import com.eshopping.decemberprojectmodulev2.models.Products.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
